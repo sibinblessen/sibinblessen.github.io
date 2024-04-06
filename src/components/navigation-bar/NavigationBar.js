@@ -1,5 +1,7 @@
 import './NavigationBar.css';
 
+import { Link } from 'react-router-dom';
+
 function NavigationBar() {
   return (
     <header class="nav-bar-container">
@@ -15,7 +17,7 @@ function NavigationBar() {
             <li class="page-link"><a href="#contact" class="page-link-text">Contact</a></li>
           </ul>
           <div class="resume-button-container">
-            <a href="/docs/resume.pdf" target="_blank" rel="noopener noreferrer" class="resume-button">Resume</a>
+          <Link to="/resume" target="_blank" rel="noopener noreferrer" className="resume-button">Resume</Link>
           </div>
         </div>
       </div>
