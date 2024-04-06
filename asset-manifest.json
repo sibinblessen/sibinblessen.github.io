@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/sibin-blessen-portfolio/static/css/main.402c7293.css",
-    "main.js": "/sibin-blessen-portfolio/static/js/main.c60fae8d.js",
-    "static/js/453.d358140a.chunk.js": "/sibin-blessen-portfolio/static/js/453.d358140a.chunk.js",
-    "static/media/resume.pdf": "/sibin-blessen-portfolio/static/media/resume.06e431414ef83acf8e8c.pdf",
-    "index.html": "/sibin-blessen-portfolio/index.html",
-    "main.402c7293.css.map": "/sibin-blessen-portfolio/static/css/main.402c7293.css.map",
-    "main.c60fae8d.js.map": "/sibin-blessen-portfolio/static/js/main.c60fae8d.js.map",
-    "453.d358140a.chunk.js.map": "/sibin-blessen-portfolio/static/js/453.d358140a.chunk.js.map"
+    "main.css": "/static/css/main.402c7293.css",
+    "main.js": "/static/js/main.dc67afb8.js",
+    "static/js/453.d358140a.chunk.js": "/static/js/453.d358140a.chunk.js",
+    "static/media/resume.pdf": "/static/media/resume.06e431414ef83acf8e8c.pdf",
+    "index.html": "/index.html",
+    "main.402c7293.css.map": "/static/css/main.402c7293.css.map",
+    "main.dc67afb8.js.map": "/static/js/main.dc67afb8.js.map",
+    "453.d358140a.chunk.js.map": "/static/js/453.d358140a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.402c7293.css",
-    "static/js/main.c60fae8d.js"
+    "static/js/main.dc67afb8.js"
   ]
 }
