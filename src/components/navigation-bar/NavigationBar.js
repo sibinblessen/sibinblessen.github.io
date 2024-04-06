@@ -1,4 +1,5 @@
 import './NavigationBar.css';
+import Resume from '../../assets/docs/resume.pdf';
 
 function NavigationBar() {
   return (
@@ -15,7 +16,7 @@ function NavigationBar() {
             <li class="page-link"><a href="#contact" class="page-link-text">Contact</a></li>
           </ul>
           <div class="resume-button-container">
-            <a href="#resume" target="_blank" rel="noopener noreferrer" class="resume-button">Resume</a>
+            <a href={Resume} target="_blank" rel="noopener noreferrer" class="resume-button">Resume</a>
           </div>
         </div>
       </div>
