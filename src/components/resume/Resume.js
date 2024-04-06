@@ -7,7 +7,7 @@ const Resume = () => {
         <title>Sibin Blessen - Resume</title>
       </head>
       <body>
-      <embed src="/docs/resume.pdf" type="application/pdf" style={{width: '100%', height: '100vh'}}/>
+      <embed src="/docs/Sibin Blessen.pdf" type="application/pdf" style={{width: '100%', height: '100vh'}}/>
       </body>
     </html>
   );
