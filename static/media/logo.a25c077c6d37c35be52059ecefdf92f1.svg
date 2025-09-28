@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <!-- Background shape with asymmetrical corners -->
+  <path d="M4 4 L36 4 Q40 4 40 8 L40 36 Q40 40 36 40 L8 40 Q4 40 4 36 L4 4 Z" fill="#08090a"/>
+  <!-- Border with same asymmetrical corners -->
+  <path d="M4 4 L36 4 Q40 4 40 8 L40 36 Q40 40 36 40 L8 40 Q4 40 4 36 L4 4 Z" fill="none" stroke="#63d2ff" stroke-width="3"/>
+  <!-- Letter S -->
+  <text x="22" y="30" font-family="Arial, sans-serif" font-size="24" font-weight="600" text-anchor="middle" fill="#63d2ff">S</text>
+</svg>

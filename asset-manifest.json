@@ -1,15 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.6662fc61.css",
-    "main.js": "/static/js/main.7f2d9686.js",
+    "main.css": "/static/css/main.712fc68a.css",
+    "main.js": "/static/js/main.11879fab.js",
     "static/js/453.d358140a.chunk.js": "/static/js/453.d358140a.chunk.js",
+    "static/media/sibin_blessen_profile_pic.jpg": "/static/media/sibin_blessen_profile_pic.1b4ce095374e0a2310d0.jpg",
     "index.html": "/index.html",
-    "main.6662fc61.css.map": "/static/css/main.6662fc61.css.map",
-    "main.7f2d9686.js.map": "/static/js/main.7f2d9686.js.map",
+    "static/media/logo.svg": "/static/media/logo.a25c077c6d37c35be52059ecefdf92f1.svg",
+    "main.712fc68a.css.map": "/static/css/main.712fc68a.css.map",
+    "main.11879fab.js.map": "/static/js/main.11879fab.js.map",
     "453.d358140a.chunk.js.map": "/static/js/453.d358140a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6662fc61.css",
-    "static/js/main.7f2d9686.js"
+    "static/css/main.712fc68a.css",
+    "static/js/main.11879fab.js"
   ]
 }
