@@ -1,23 +1,63 @@
 import './NavigationBar.css';
+import logoSvg from './logo.svg';
 
 import { Link } from 'react-router-dom';
 
 function NavigationBar() {
+  const handleScrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <header class="nav-bar-container">
-      <div class="nav-bar">
-        <div class="logo-container">
-          <h1 class="logo">S</h1>
+    <header className="nav-bar-container">
+      <div className="nav-bar">
+        <div className="logo-container">
+          <img src={logoSvg} alt="Sibin Blessen Logo" className="logo-svg" />
         </div>
-        <div class="nav-action-container">
-          <ul class="page-link-container">
-            <li class="page-link"><a href="#about" class="page-link-text">About</a></li>
-            <li class="page-link"><a href="#experience" class="page-link-text">Experience</a></li>
-            <li class="page-link"><a href="#work" class="page-link-text">Work</a></li>
-            <li class="page-link"><a href="#contact" class="page-link-text">Contact</a></li>
+        <div className="nav-action-container">
+          <ul className="page-link-container">
+            <li className="page-link">
+              <button 
+                onClick={() => handleScrollToSection('about')} 
+                className="page-link-text"
+                type="button"
+              >
+                About
+              </button>
+            </li>
+            <li className="page-link">
+              <button 
+                onClick={() => handleScrollToSection('experience')} 
+                className="page-link-text"
+                type="button"
+              >
+                Experience
+              </button>
+            </li>
+            <li className="page-link">
+              <button 
+                onClick={() => handleScrollToSection('skills')} 
+                className="page-link-text"
+                type="button"
+              >
+                Skills
+              </button>
+            </li>
+            <li className="page-link">
+              <button 
+                onClick={() => handleScrollToSection('work')} 
+                className="page-link-text"
+                type="button"
+              >
+                Projects
+              </button>
+            </li>
           </ul>
-          <div class="resume-button-container">
-          <Link to="/resume" target="_blank" rel="noopener noreferrer" className="resume-button">Resume</Link>
+          <div className="resume-button-container">
+          <Link to="/resume" className="resume-button">Resume</Link>
           </div>
         </div>
       </div>

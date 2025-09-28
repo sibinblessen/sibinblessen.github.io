@@ -1,8 +1,9 @@
+@import './shared.css';
+
 * {
   margin: 0;
   padding: 0;
-  color: #f4f7f5;
-  background-color: #08090a;
+  box-sizing: border-box;
 }
 
 body {
@@ -11,8 +12,27 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  color: #f4f7f5;
+  background: linear-gradient(135deg, #0f1419 0%, #1a1f2e  25%, #2d3748 50%, #1a202c 75%, #08090a 100%);
+  min-height: 100vh;
 }
 
 a {
   text-decoration: none;
+}
+
+/* Mobile-specific optimizations */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+/* Improve touch target sizes for mobile */
+@media (pointer: coarse) {
+  button, a, input {
+    min-height: 44px;
+    min-width: 44px;
+  }
 }

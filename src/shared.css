@@ -1,0 +1,54 @@
+/* Shared section styles used across multiple components */
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-title {
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
+    font-weight: 800;
+    color: #f4f7f5;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #63d2ff, #3b82f6);
+    border-radius: 2px;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: #9ca3af;
+    font-weight: 400;
+}
+
+/* Shared subsection styles for components within sections */
+.subsection-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #f4f7f5;
+    margin-bottom: 2rem;
+    position: relative;
+    text-align: center;
+}
+
+.subsection-title::after {
+    content: '';
+    position: absolute;
+    bottom: -0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 2px;
+    background: #63d2ff;
+    border-radius: 1px;
+}

@@ -3,14 +3,42 @@
     margin: 20px 0;
     display: flex;
     justify-content: center;
+    background: transparent;
 }
 
 .footer {
     padding-bottom: 20px;
     color: #777777;
     font-weight: 800;
+    background: transparent;
 }
 
 .footer:hover {
     color: #63d2ff;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+    .footer-container {
+        padding: 0 15px;
+        margin: 15px 0;
+    }
+    
+    .footer {
+        font-size: 14px;
+        padding-bottom: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-container {
+        padding: 0 10px;
+        margin: 10px 0;
+    }
+    
+    .footer {
+        font-size: 13px;
+        padding-bottom: 10px;
+        text-align: center;
+    }
 }

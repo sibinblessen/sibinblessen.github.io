@@ -1,0 +1,157 @@
+.education-section {
+    padding: 4rem 0;
+    background: #08090a;
+}
+
+.education-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 4rem;
+    box-sizing: border-box;
+}
+
+.education-content {
+    display: grid;
+    gap: 3rem;
+    background: transparent;
+}
+
+.education-item {
+    background: rgba(31, 41, 55, 0.3);
+    border: 1px solid rgba(99, 210, 255, 0.1);
+    border-radius: 16px;
+    padding: 2.5rem;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.education-item:hover {
+    border-color: rgba(99, 210, 255, 0.3);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 60px rgba(99, 210, 255, 0.1);
+}
+
+.education-details {
+    flex: 1;
+    background: transparent;
+}
+
+.degree-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #f4f7f5;
+    margin-bottom: 0.5rem;
+    background: transparent;
+}
+
+.institution {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #63d2ff;
+    margin-bottom: 1rem;
+    background: transparent;
+}
+
+.education-meta {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    background: transparent;
+}
+
+.location {
+    color: #9ca3af;
+    background: transparent;
+}
+
+.period {
+    color: #63d2ff;
+    font-weight: 500;
+    background: transparent;
+}
+
+.education-highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    background: transparent;
+}
+
+.highlight-item {
+    color: #d1d5db;
+    line-height: 1.6;
+    padding-left: 1rem;
+    border-left: 2px solid #63d2ff;
+    background: rgba(99, 210, 255, 0.05);
+    padding: 0.8rem 1rem;
+    border-radius: 4px;
+}
+
+.highlight-item strong {
+    color: #63d2ff;
+    background: transparent;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .education-container {
+        padding: 0 3rem;
+    }
+    
+    .interests-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .education-container {
+        padding: 0 2rem;
+    }
+    
+    .education-item {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem;
+    }
+    
+    .education-meta {
+        justify-content: center;
+        gap: 1rem;
+    }
+    
+    .languages-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .interests-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.8rem;
+    }
+    
+    .languages-section, .interests-section {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .education-container {
+        padding: 0 1rem;
+    }
+    
+    .education-item {
+        padding: 1.5rem;
+    }
+    
+    .icon-circle {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    
+    .education-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
