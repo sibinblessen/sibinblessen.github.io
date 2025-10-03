@@ -16,6 +16,7 @@ body {
   color: #f4f7f5;
   background: linear-gradient(135deg, #0f1419 0%, #1a1f2e  25%, #2d3748 50%, #1a202c 75%, #08090a 100%);
   min-height: 100vh;
+  padding-top: 100px; /* Account for fixed navbar */
 }
 
 a {
@@ -26,13 +27,83 @@ a {
 @media (max-width: 768px) {
   body {
     font-size: 14px;
+    line-height: 1.6;
+  }
+  
+  /* Prevent horizontal scrolling */
+  html, body {
+    overflow-x: hidden;
+    max-width: 100%;
   }
 }
 
 /* Improve touch target sizes for mobile */
 @media (pointer: coarse) {
-  button, a, input {
+  button, a, input, [role="button"] {
     min-height: 44px;
     min-width: 44px;
+  }
+  
+  /* Improve tap targets */
+  button, a, input, select, textarea, [tabindex], [role="button"] {
+    touch-action: manipulation;
+  }
+}
+
+/* Global mobile improvements */
+@media (max-width: 480px) {
+  * {
+    /* Prevent text from being too small */
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+  
+  /* Better spacing for small screens */
+  .section-header {
+    margin-bottom: 3rem;
+  }
+  
+  .section-title {
+    font-size: clamp(2rem, 8vw, 2.8rem) !important;
+  }
+  
+  .section-subtitle {
+    font-size: 1rem !important;
+  }
+}
+
+/* Accessibility improvements for mobile */
+@media (max-width: 768px) {
+  /* Better focus indicators */
+  *:focus {
+    outline: 2px solid #63d2ff;
+    outline-offset: 2px;
+  }
+  
+  /* Remove hover effects that don't work well on touch */
+  @media (hover: none) and (pointer: coarse) {
+    button:hover, 
+    a:hover,
+    [role="button"]:hover {
+      transform: none;
+      box-shadow: none;
+    }
+  }
+}
+
+/* Performance optimizations for mobile */
+@media (max-width: 768px) {
+  /* Reduce animation complexity on smaller devices */
+  *, *::before, *::after {
+    animation-duration: 0.3s !important;
+    transition-duration: 0.3s !important;
+  }
+}
+
+/* Safe area handling for mobile devices with notches */
+@supports (padding: max(0px)) {
+  body {
+    padding-left: max(12px, env(safe-area-inset-left));
+    padding-right: max(12px, env(safe-area-inset-right));
   }
 }

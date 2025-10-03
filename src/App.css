@@ -1,0 +1,38 @@
+/* App Component Mobile Optimizations */
+
+.App {
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Ensure proper routing transitions on mobile */
+@media (max-width: 768px) {
+    .App {
+        position: relative;
+    }
+    
+    /* Prevent layout shifts during navigation */
+    * {
+        box-sizing: border-box;
+    }
+}
+
+/* Performance improvements for mobile devices */
+@media (max-width: 480px) {
+    .App {
+        /* Optimize rendering on slower devices */
+        transform: translateZ(0);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

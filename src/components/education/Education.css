@@ -99,8 +99,8 @@
         padding: 0 3rem;
     }
     
-    .interests-grid {
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    .education-item {
+        padding: 2.75rem;
     }
 }
 
@@ -110,28 +110,39 @@
     }
     
     .education-item {
-        flex-direction: column;
-        text-align: center;
         padding: 2rem;
+        text-align: center;
+        border-radius: 12px;
+    }
+    
+    .degree-title {
+        font-size: 1.4rem;
+        margin-bottom: 0.75rem;
+        line-height: 1.3;
+    }
+    
+    .institution {
+        font-size: 1.1rem;
+        margin-bottom: 1.25rem;
     }
     
     .education-meta {
         justify-content: center;
-        gap: 1rem;
+        gap: 1.5rem;
+        font-size: 1rem;
+        margin-bottom: 1.75rem;
     }
     
-    .languages-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
+    .location, .period {
+        font-size: 1rem;
     }
-    
-    .interests-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 0.8rem;
+
+    .section-title {
+        font-size: clamp(2rem, 8vw, 2.8rem);
     }
-    
-    .languages-section, .interests-section {
-        padding: 2rem;
+
+    .section-subtitle {
+        font-size: 1rem;
     }
 }
 
@@ -144,14 +155,59 @@
         padding: 1.5rem;
     }
     
-    .icon-circle {
-        width: 60px;
-        height: 60px;
-        font-size: 1.5rem;
+    .degree-title {
+        font-size: 1.2rem;
+        margin-bottom: 0.625rem;
+    }
+    
+    .institution {
+        font-size: 1rem;
+        margin-bottom: 1rem;
     }
     
     .education-meta {
         flex-direction: column;
-        gap: 0.5rem;
+        gap: 0.75rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .location, .period {
+        font-size: 0.9rem;
+    }
+    
+    .highlight-item {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+}
+
+@media (max-width: 360px) {
+    .education-container {
+        padding: 0 0.75rem;
+    }
+    
+    .education-item {
+        padding: 1.25rem;
+    }
+    
+    .degree-title {
+        font-size: 1.1rem;
+    }
+    
+    .institution {
+        font-size: 0.95rem;
+    }
+    
+    .location, .period {
+        font-size: 0.85rem;
+    }
+}
+
+/* Mobile hover states */
+@media (hover: none) and (pointer: coarse) {
+    .education-item:hover {
+        transform: none;
+        box-shadow: 0 10px 30px rgba(99, 210, 255, 0.05);
     }
 }

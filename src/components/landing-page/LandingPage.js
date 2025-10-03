@@ -6,12 +6,14 @@ import Education from "../education/Education";
 import PersonalProfile from "../personal-profile/PersonalProfile";
 import Footer from "../footer/Footer";
 import NavigationBar from "../navigation-bar/NavigationBar";
+import StructuredData from "../StructuredData";
 
 import "./LandingPage.css";
 
 function LandingPage() {
   return (
     <div className="LandingPage">
+      <StructuredData />
       <NavigationBar />
       <About />
       <Experience />

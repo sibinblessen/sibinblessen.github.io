@@ -1,3 +1,22 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Allow: /
+Disallow: /static/
+Disallow: /.git/
+Disallow: /node_modules/
+
+# Sitemap location
+Sitemap: https://sibinblessen.github.io/sitemap.xml
+
+# Crawl delay (optional)
+Crawl-delay: 1
+
+# Specific user agents
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /

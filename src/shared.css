@@ -52,3 +52,63 @@
     background: #63d2ff;
     border-radius: 1px;
 }
+
+/* Mobile responsiveness for shared components */
+@media (max-width: 768px) {
+    .section-header {
+        margin-bottom: 3rem;
+    }
+    
+    .section-title {
+        font-size: clamp(2rem, 8vw, 2.8rem);
+        margin-bottom: 1.25rem;
+    }
+    
+    .section-title::after {
+        width: 50px;
+        height: 3px;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+    
+    .subsection-title {
+        font-size: 1.3rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .subsection-title::after {
+        width: 35px;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-header {
+        margin-bottom: 2.5rem;
+    }
+    
+    .section-title {
+        font-size: clamp(1.8rem, 10vw, 2.4rem);
+        margin-bottom: 1rem;
+    }
+    
+    .section-title::after {
+        width: 45px;
+        height: 3px;
+    }
+    
+    .section-subtitle {
+        font-size: 0.95rem;
+    }
+    
+    .subsection-title {
+        font-size: 1.2rem;
+        margin-bottom: 1.25rem;
+    }
+    
+    .subsection-title::after {
+        width: 30px;
+    }
+}

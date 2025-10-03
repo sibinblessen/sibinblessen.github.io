@@ -203,7 +203,11 @@
     
     .projects-grid {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
+        gap: 2rem;
+    }
+    
+    .project-card {
+        padding: 2.25rem;
     }
 }
 
@@ -212,14 +216,68 @@
         padding: 0 2rem;
     }
     
+    .projects-grid {
+        gap: 1.75rem;
+    }
+    
     .project-card {
-        padding: 1.5rem;
+        padding: 1.75rem;
+        border-radius: 12px;
     }
     
     .project-header {
         flex-direction: column;
         align-items: flex-start;
-        gap: 0.5rem;
+        gap: 0.75rem;
+        margin-bottom: 1.25rem;
+    }
+    
+    .project-title {
+        font-size: 1.4rem;
+        line-height: 1.3;
+    }
+    
+    .project-description {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 1.75rem;
+    }
+    
+    .project-links {
+        margin-bottom: 1.75rem;
+        gap: 0.75rem;
+    }
+    
+    .project-link {
+        padding: 0.75rem 1.25rem;
+        font-size: 0.95rem;
+        min-height: 44px;
+        border-radius: 10px;
+    }
+    
+    .tech-tags {
+        gap: 0.6rem;
+    }
+    
+    .tech-tag {
+        padding: 0.4rem 0.875rem;
+        font-size: 0.85rem;
+        min-height: 32px;
+        border-radius: 18px;
+    }
+    
+    .achievement-item {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+        font-size: clamp(2rem, 8vw, 2.8rem);
+    }
+
+    .section-subtitle {
+        font-size: 1rem;
     }
 }
 
@@ -228,16 +286,108 @@
         padding: 0 1rem;
     }
     
+    .projects-grid {
+        gap: 1.5rem;
+    }
+    
+    .project-card {
+        padding: 1.25rem;
+    }
+    
+    .project-title {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+    
+    .project-description {
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .project-links {
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .project-link {
+        padding: 0.625rem 1rem;
+        font-size: 0.9rem;
+        text-align: center;
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .tech-title, .achievements-title {
+        font-size: 0.95rem;
+    }
+    
+    .tech-tags {
+        gap: 0.4rem;
+    }
+    
+    .tech-tag {
+        padding: 0.35rem 0.75rem;
+        font-size: 0.8rem;
+        min-height: 30px;
+        border-radius: 15px;
+    }
+    
+    .achievement-item {
+        font-size: 0.9rem;
+        margin-bottom: 0.625rem;
+        padding-left: 1.25rem;
+    }
+    
+    .achievement-item::before {
+        top: 0.45rem;
+        width: 4px;
+        height: 4px;
+    }
+}
+
+@media (max-width: 360px) {
+    .projects-container {
+        padding: 0 0.75rem;
+    }
+    
     .project-card {
         padding: 1rem;
     }
     
-    .tech-tags {
-        gap: 0.3rem;
+    .project-title {
+        font-size: 1.1rem;
+    }
+    
+    .project-description {
+        font-size: 0.9rem;
+    }
+    
+    .project-link {
+        padding: 0.5rem 0.875rem;
+        font-size: 0.85rem;
     }
     
     .tech-tag {
-        padding: 0.2rem 0.6rem;
-        font-size: 0.7rem;
+        padding: 0.3rem 0.625rem;
+        font-size: 0.75rem;
+    }
+    
+    .achievement-item {
+        font-size: 0.85rem;
+        padding-left: 1rem;
+    }
+}
+
+/* Mobile hover states */
+@media (hover: none) and (pointer: coarse) {
+    .project-card:hover {
+        transform: none;
+        box-shadow: 0 10px 30px rgba(99, 210, 255, 0.05);
+    }
+    
+    .project-link:hover {
+        transform: none;
+        background: rgba(99, 210, 255, 0.15);
     }
 }

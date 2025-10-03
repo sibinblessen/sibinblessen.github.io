@@ -1,7 +1,6 @@
 .LandingPage {
     position: relative;
     margin: 0 auto;
-    margin-top: -20px;
-    margin-bottom: -20px;
     background-color: #08090a;
+    padding-top: 0; /* Remove negative margin since we have fixed navbar */
 }

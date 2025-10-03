@@ -105,7 +105,11 @@
     }
     
     .personal-content {
-        gap: 2rem;
+        gap: 2.5rem;
+    }
+    
+    .languages-section, .interests-section {
+        padding: 2.75rem;
     }
 }
 
@@ -114,18 +118,59 @@
         padding: 0 2rem;
     }
     
-    .languages-grid {
-        grid-template-columns: 1fr;
-        gap: 0.8rem;
-    }
-    
-    .interests-grid {
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-        gap: 0.8rem;
+    .personal-content {
+        gap: 2rem;
     }
     
     .languages-section, .interests-section {
         padding: 2rem;
+        border-radius: 12px;
+    }
+    
+    .languages-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .language-item {
+        padding: 1.25rem;
+        border-radius: 8px;
+    }
+    
+    .language-name {
+        font-size: 1.1rem;
+        margin-bottom: 0.625rem;
+    }
+    
+    .proficiency-level {
+        font-size: 0.95rem;
+    }
+    
+    .interests-grid {
+        grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+        gap: 1rem;
+    }
+    
+    .interest-item {
+        padding: 1.25rem 1rem;
+        border-radius: 8px;
+        min-height: 100px;
+    }
+    
+    .interest-icon {
+        font-size: 2.2rem;
+    }
+    
+    .interest-item span {
+        font-size: 0.95rem;
+    }
+
+    .section-title {
+        font-size: clamp(2rem, 8vw, 2.8rem);
+    }
+
+    .section-subtitle {
+        font-size: 1rem;
     }
 }
 
@@ -142,15 +187,84 @@
         padding: 1.5rem;
     }
     
+    .languages-grid {
+        gap: 0.875rem;
+    }
+    
     .language-item {
         padding: 1rem;
     }
     
-    .interest-item {
-        padding: 1rem 0.5rem;
+    .language-name {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .proficiency-level {
+        font-size: 0.9rem;
     }
     
     .interests-grid {
         grid-template-columns: repeat(3, 1fr);
+        gap: 0.75rem;
+    }
+    
+    .interest-item {
+        padding: 1rem 0.5rem;
+        min-height: 90px;
+        gap: 0.625rem;
+    }
+    
+    .interest-icon {
+        font-size: 1.8rem;
+    }
+    
+    .interest-item span {
+        font-size: 0.85rem;
+        font-weight: 500;
+    }
+}
+
+@media (max-width: 360px) {
+    .personal-container {
+        padding: 0 0.75rem;
+    }
+    
+    .languages-section, .interests-section {
+        padding: 1.25rem;
+    }
+    
+    .language-item {
+        padding: 0.875rem;
+    }
+    
+    .language-name {
+        font-size: 0.95rem;
+    }
+    
+    .proficiency-level {
+        font-size: 0.85rem;
+    }
+    
+    .interest-item {
+        padding: 0.75rem 0.375rem;
+        min-height: 80px;
+    }
+    
+    .interest-icon {
+        font-size: 1.6rem;
+    }
+    
+    .interest-item span {
+        font-size: 0.8rem;
+    }
+}
+
+/* Mobile hover states */
+@media (hover: none) and (pointer: coarse) {
+    .language-item:hover,
+    .interest-item:hover {
+        transform: none;
+        box-shadow: 0 5px 15px rgba(99, 210, 255, 0.05);
     }
 }

@@ -38,16 +38,16 @@ function Skills() {
 
                 <div className="skills-grid">
                     {skillCategories.map((category, index) => (
-                        <div key={index} className="skill-category">
-                            <h3 className="category-title">{category.title}</h3>
-                            <div className="skills-list">
+                        <article key={index} className="skill-category">
+                            <h3 className="category-title" itemProp="skillCategory">{category.title}</h3>
+                            <ul className="skills-list" aria-label={`${category.title} skills`}>
                                 {category.skills.map((skill, skillIndex) => (
-                                    <span key={skillIndex} className="skill-tag">
+                                    <li key={skillIndex} className="skill-tag" itemProp="skill">
                                         {skill}
-                                    </span>
+                                    </li>
                                 ))}
-                            </div>
-                        </div>
+                            </ul>
+                        </article>
                     ))}
                 </div>
             </div>
