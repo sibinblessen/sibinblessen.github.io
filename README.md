@@ -80,7 +80,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ### Deployment
 
-Pushes to `main` run the GitHub Actions workflow in `.github/workflows/deploy.yml`. The workflow installs the locked dependencies, runs the test suite, builds the site, deploys the build artifact to GitHub Pages, and smoke-tests the homepage, resume PDF, manifest, favicon, sitemap, and social image.
+Pushes to `main` run the GitHub Actions workflow in `.github/workflows/deploy.yml`. The workflow installs the locked dependencies, runs the test suite, builds the site, commits the build output to the `gh-pages` branch, and smoke-tests the homepage, resume PDF, manifest, favicon, sitemap, and social image. GitHub Pages should be configured to deploy from the `gh-pages` branch at the repository root.
 
 The production dependency graph is kept separate from development tooling. `npm audit --omit=dev --audit-level=high` is the release check for runtime vulnerabilities; the remaining full-audit findings belong to the Create React App build toolchain and should be revisited as part of a future toolchain migration.
 

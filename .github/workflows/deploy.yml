@@ -6,16 +6,14 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 concurrency:
   group: pages
   cancel-in-progress: true
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Check out source
@@ -36,27 +34,25 @@ jobs:
       - name: Build site
         run: npm run build
 
-      - name: Configure Pages
-        uses: actions/configure-pages@v5
-
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: build
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Commit build to gh-pages
+        run: |
+          set -euo pipefail
+          git fetch origin gh-pages
+          rm -rf /tmp/gh-pages
+          git worktree add --detach /tmp/gh-pages origin/gh-pages
+          rsync -a --delete --exclude=.git build/ /tmp/gh-pages/
+          git -C /tmp/gh-pages config user.name "github-actions[bot]"
+          git -C /tmp/gh-pages config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git -C /tmp/gh-pages add -A
+          if git -C /tmp/gh-pages diff --cached --quiet; then
+            echo "Build output is already up to date."
+          else
+            git -C /tmp/gh-pages commit -m "Deploy ${GITHUB_SHA}"
+            git -C /tmp/gh-pages push origin HEAD:gh-pages
+          fi
 
   smoke-test:
-    needs: deploy
+    needs: build-and-deploy
     runs-on: ubuntu-latest
     steps:
       - name: Check deployed pages and assets
