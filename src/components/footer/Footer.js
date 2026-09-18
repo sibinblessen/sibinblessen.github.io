@@ -1,10 +1,9 @@
 import './Footer.css';
 
-function Footer() {
+function Footer({ content }) {
   return (
     <footer className="footer-container">
-      <a href="https://github.com/sibinblessen" target="_blank" rel="noopener noreferrer" className="footer">Designed
-        & Developed by Sibin Blessen</a>
+      <a href="https://github.com/sibinblessen" target="_blank" rel="noopener noreferrer" className="footer">{content}</a>
     </footer>
   );
 }

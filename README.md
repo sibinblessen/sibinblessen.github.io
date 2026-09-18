@@ -27,7 +27,7 @@ A modern, responsive portfolio website built with React, showcasing professional
 - **About/Hero Section**: Professional introduction with profile image and contact information
 - **Experience**: Detailed work history and achievements
 - **Skills**: Categorized technical skills and competencies
-- **Projects**: Featured projects with descriptions and technologies used
+- **Projects**: Featured projects with descriptions, technologies, and available links
 - **Education**: Academic background and certifications
 - **Contact**: Multiple ways to get in touch
 
@@ -35,7 +35,6 @@ A modern, responsive portfolio website built with React, showcasing professional
 
 ### Frontend
 - **React 18.2.0**: Modern React with hooks and functional components
-- **React Router DOM 6.22.3**: Client-side routing with HashRouter
 - **CSS3**: Advanced styling with Grid, Flexbox, and modern properties
 - **HTML5**: Semantic markup for better SEO and accessibility
 
@@ -78,6 +77,12 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### Deployment
+
+Pushes to `main` run the GitHub Actions workflow in `.github/workflows/deploy.yml`. The workflow installs the locked dependencies, runs the test suite, builds the site, deploys the build artifact to GitHub Pages, and smoke-tests the homepage, resume PDF, manifest, favicon, sitemap, and social image.
+
+The production dependency graph is kept separate from development tooling. `npm audit --omit=dev --audit-level=high` is the release check for runtime vulnerabilities; the remaining full-audit findings belong to the Create React App build toolchain and should be revisited as part of a future toolchain migration.
 
 ### `npm run eject`
 

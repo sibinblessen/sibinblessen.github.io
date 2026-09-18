@@ -6,10 +6,10 @@
     right: 0;
     width: 100%;
     padding: 0 1.25rem;
-    padding-top: 1.25rem;
-    box-shadow: 0 0.5rem 0.375rem -0.375rem #08090a;
-    background: rgba(8, 9, 10, 0.95);
-    backdrop-filter: blur(10px);
+    padding-top: 0.75rem;
+    box-shadow: none;
+    background: transparent;
+    backdrop-filter: blur(14px);
     z-index: 1000;
 }
 
@@ -19,7 +19,12 @@
     align-items: center;
     width: 100%;
     z-index: 15;
-    margin: 1.25rem 0;
+    max-width: var(--content-width);
+    margin: 0.75rem auto;
+    padding: 0.65rem 0.75rem;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: var(--nav-surface);
 }
 
 .logo-container {
@@ -27,32 +32,35 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0;
+    border: 0;
+    background: transparent;
     z-index: 1001;
 }
 
 .logo {
-    color: #63d2ff;
+    color: var(--cyan);
     user-select: none;
     padding: 0.25rem 0.5rem;
     font-weight: 600;
     font-size: 2rem;
-    border: 0.1875rem solid #63d2ff;
+    border: 0.1875rem solid var(--cyan);
     border-radius: 0.25rem 1rem 1rem 1rem;
     background: transparent;
     transition: all 0.3s ease;
 }
 
 .logo-svg {
-    height: 2.5rem;
-    width: 2.5rem;
+    height: 2.25rem;
+    width: 2.25rem;
     user-select: none;
     transition: all 0.3s ease;
     cursor: pointer;
 }
 
 .logo:hover {
-    color: #f4f7f5;
-    border: 0.1875rem solid #f4f7f5;
+    color: var(--paper);
+    border: 0.1875rem solid var(--paper);
     transform: scale(1.05);
 }
 
@@ -68,6 +76,12 @@
     gap: 0.5rem;
 }
 
+.nav-preferences {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
 .nav-action-container {
     display: flex;
     align-items: center;
@@ -80,25 +94,27 @@
     align-items: center;
     list-style: none;
     background: transparent;
-    gap: 2.5rem;
+    gap: 1.5rem;
 }
 
 .page-link {
     cursor: pointer;
     display: flex;
     align-items: center;
-    color: #63d2ff;
+    color: var(--cyan);
     background: transparent;
     transition: all 0.3s ease;
 }
 
 .page-link-text {
-    color: #f4f7f5;
+    color: var(--body);
     margin-left: 0.5rem;
     background: none;
     border: none;
     font-family: inherit;
-    font-size: 1rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
     cursor: pointer;
     padding: 0.5rem 0;
     text-decoration: none;
@@ -109,11 +125,11 @@
 }
 
 .page-link-text:hover {
-    color: #63d2ff;
+    color: var(--cyan);
 }
 
 .page-link-text:focus {
-    outline: 0.125rem solid #63d2ff;
+    outline: 0.125rem solid var(--cyan);
     outline-offset: 0.125rem;
 }
 
@@ -125,12 +141,14 @@
 }
 
 .resume-button {
-    color: #63d2ff;
-    border: 0.125rem solid #63d2ff;
-    border-radius: 0.25rem;
+    color: var(--cyan);
+    border: 0.125rem solid var(--cyan);
+    border-radius: 2px;
     padding: 0.5rem 1rem;
     background: transparent;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
     font-weight: 500;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -144,8 +162,8 @@
 }
 
 .resume-button:hover {
-    background-color: #63d2ff;
-    color: #08090a;
+    background-color: var(--cyan);
+    color: var(--on-accent);
     transform: translateY(-0.125rem);
 }
 
@@ -167,7 +185,7 @@
 .hamburger-line {
     width: 25px;
     height: 3px;
-    background-color: #63d2ff;
+    background-color: var(--cyan);
     margin: 2px 0;
     transition: all 0.3s ease;
     border-radius: 2px;
@@ -193,7 +211,7 @@
     left: 0;
     width: 100%;
     height: 100vh;
-    background: rgba(8, 9, 10, 0.98);
+    background: var(--overlay-surface);
     backdrop-filter: blur(20px);
     z-index: 999;
     display: flex;
@@ -231,7 +249,7 @@
 }
 
 .mobile-page-link-text {
-    color: #f4f7f5;
+    color: var(--paper);
     background: none;
     border: none;
     font-family: inherit;
@@ -251,8 +269,8 @@
 
 .mobile-page-link-text:hover,
 .mobile-page-link-text:focus {
-    color: #63d2ff;
-    background: rgba(99, 210, 255, 0.1);
+    color: var(--cyan);
+    background: rgb(var(--cyan-rgb) / 0.1);
     transform: scale(1.05);
     outline: none;
 }
@@ -262,8 +280,8 @@
 }
 
 .mobile-resume-button {
-    color: #63d2ff;
-    border: 0.125rem solid #63d2ff;
+    color: var(--cyan);
+    border: 0.125rem solid var(--cyan);
     border-radius: 12px;
     padding: 1rem 2rem;
     background: transparent;
@@ -281,8 +299,8 @@
 }
 
 .mobile-resume-button:hover {
-    background-color: #63d2ff;
-    color: #08090a;
+    background-color: var(--cyan);
+    color: var(--on-accent);
     transform: scale(1.05);
 }
 
@@ -382,5 +400,59 @@
     .hamburger-menu,
     .mobile-nav-overlay {
         display: none !important;
+    }
+}
+
+.nav-bar-container {
+    padding: 0 1rem;
+    padding-top: 0.75rem;
+}
+
+.nav-bar {
+    margin: 0.75rem auto;
+    padding: 0.55rem 0.65rem;
+    border-radius: var(--radius);
+    background: color-mix(in srgb, var(--ink) 86%, transparent);
+    box-shadow: 0 0.75rem 2rem rgba(0, 0, 0, 0.18);
+}
+
+.page-link-container {
+    gap: 1.25rem;
+}
+
+.page-link-text {
+    margin-left: 0;
+    color: var(--muted);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+}
+
+.page-link-text:hover {
+    color: var(--cyan);
+}
+
+.resume-button {
+    border-radius: 3px;
+    padding: 0.45rem 0.85rem;
+    color: var(--cyan);
+    font-size: 0.75rem;
+}
+
+.mobile-page-link-text {
+    border-radius: var(--radius);
+}
+
+.mobile-resume-button {
+    border-radius: 3px;
+}
+
+@media (max-width: 768px) {
+    .nav-bar-container {
+        padding: 0 0.75rem;
+        padding-top: 0.65rem;
+    }
+
+    .nav-bar {
+        margin: 0.65rem 0;
     }
 }

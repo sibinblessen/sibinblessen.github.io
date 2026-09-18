@@ -7,21 +7,31 @@ import PersonalProfile from "../personal-profile/PersonalProfile";
 import Footer from "../footer/Footer";
 import NavigationBar from "../navigation-bar/NavigationBar";
 import StructuredData from "../StructuredData";
+import { translations } from '../../i18n';
 
 import "./LandingPage.css";
 
-function LandingPage() {
+function LandingPage({ language, onLanguageChange, theme, onThemeToggle }) {
+  const content = translations[language];
+
   return (
     <div className="LandingPage">
-      <StructuredData />
-      <NavigationBar />
-      <About />
-      <Experience />
-      <Skills />
-      <Projects />
-      <Education />
-      <PersonalProfile />
-      <Footer />
+      <StructuredData language={language} />
+      <NavigationBar
+        language={language}
+        onLanguageChange={onLanguageChange}
+        theme={theme}
+        onThemeToggle={onThemeToggle}
+      />
+      <main>
+        <About language={language} />
+        <Experience language={language} />
+        <Skills language={language} />
+        <Projects language={language} />
+        <Education language={language} />
+        <PersonalProfile language={language} />
+      </main>
+      <Footer content={content.footer} />
     </div>
   );
 }

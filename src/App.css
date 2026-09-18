@@ -4,6 +4,11 @@
     width: 100%;
     min-height: 100vh;
     overflow-x: hidden;
+    background:
+        linear-gradient(rgb(var(--cyan-rgb) / 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgb(var(--cyan-rgb) / 0.035) 1px, transparent 1px),
+        var(--ink);
+    background-size: 48px 48px;
 }
 
 /* Ensure proper routing transitions on mobile */

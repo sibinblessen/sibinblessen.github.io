@@ -1,8 +1,8 @@
 .resume-container {
     width: 100%;
     min-height: 100vh;
-    background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 25%, #2d3748 50%, #1a202c 75%, #08090a 100%);
-    color: #f4f7f5;
+    background: linear-gradient(135deg, var(--ink-soft) 0%, var(--surface-strong) 25%, var(--surface-strong) 50%, var(--surface-strong) 75%, var(--ink) 100%);
+    color: var(--paper);
     padding-top: 120px; /* Account for fixed navbar */
 }
 
@@ -36,7 +36,7 @@
 .resume-title {
     font-size: clamp(2.5rem, 8vw, 3.5rem);
     font-weight: 800;
-    color: #f4f7f5;
+    color: var(--paper);
     margin-bottom: 1rem;
     position: relative;
 }
@@ -49,13 +49,13 @@
     transform: translateX(-50%);
     width: 60px;
     height: 4px;
-    background: linear-gradient(90deg, #63d2ff, #3b82f6);
+    background: linear-gradient(90deg, var(--cyan), var(--blue));
     border-radius: 2px;
 }
 
 .resume-subtitle {
     font-size: 1.2rem;
-    color: #9ca3af;
+    color: var(--muted);
     font-weight: 400;
 }
 
@@ -68,11 +68,11 @@
 
 .download-button,
 .view-button {
-    background: rgba(31, 41, 55, 0.4);
-    border: 1px solid rgba(99, 210, 255, 0.3);
+    background: color-mix(in srgb, var(--surface-strong) 40%, transparent);
+    border: 1px solid rgb(var(--cyan-rgb) / 0.3);
     border-radius: 12px;
     padding: 1rem 2rem;
-    color: #63d2ff;
+    color: var(--cyan);
     font-size: 1rem;
     font-weight: 600;
     text-decoration: none;
@@ -90,15 +90,15 @@
 
 .download-button:hover,
 .view-button:hover {
-    background: rgba(99, 210, 255, 0.2);
-    border-color: rgba(99, 210, 255, 0.5);
+    background: rgb(var(--cyan-rgb) / 0.2);
+    border-color: rgb(var(--cyan-rgb) / 0.5);
     transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(99, 210, 255, 0.2);
+    box-shadow: 0 10px 30px rgb(var(--cyan-rgb) / 0.2);
 }
 
 .mobile-pdf-notice {
-    background: rgba(99, 210, 255, 0.1);
-    border: 1px solid rgba(99, 210, 255, 0.2);
+    background: rgb(var(--cyan-rgb) / 0.1);
+    border: 1px solid rgb(var(--cyan-rgb) / 0.2);
     border-radius: 12px;
     padding: 1.5rem;
     text-align: center;
@@ -106,15 +106,15 @@
 }
 
 .mobile-pdf-notice p {
-    color: #d1d5db;
+    color: var(--body);
     font-size: 0.95rem;
     line-height: 1.6;
     margin: 0;
 }
 
 .mobile-pdf-container {
-    background: rgba(31, 41, 55, 0.2);
-    border: 1px solid rgba(99, 210, 255, 0.1);
+    background: color-mix(in srgb, var(--surface-strong) 20%, transparent);
+    border: 1px solid rgb(var(--cyan-rgb) / 0.1);
     border-radius: 16px;
     padding: 1rem;
     backdrop-filter: blur(10px);
@@ -242,6 +242,58 @@
     .view-button:hover {
         transform: none;
         box-shadow: none;
-        background: rgba(99, 210, 255, 0.15);
+        background: rgb(var(--cyan-rgb) / 0.15);
+    }
+}
+
+.resume-container {
+    background:
+        linear-gradient(rgb(var(--cyan-rgb) / 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgb(var(--cyan-rgb) / 0.035) 1px, transparent 1px),
+        var(--ink);
+    background-size: 48px 48px;
+}
+
+.resume-title {
+    font-size: 3.5rem;
+    color: var(--paper);
+}
+
+.resume-subtitle {
+    color: var(--muted);
+}
+
+.resume-title::after {
+    width: 4rem;
+    height: 2px;
+    border-radius: 0;
+    background: var(--cyan);
+}
+
+.download-button,
+.view-button {
+    min-height: 3rem;
+    border-radius: 3px;
+    border-color: rgb(var(--cyan-rgb) / 0.28);
+    background: var(--surface);
+    color: var(--cyan);
+}
+
+.mobile-pdf-notice,
+.mobile-pdf-container {
+    border-radius: var(--radius);
+    border-color: rgb(var(--cyan-rgb) / 0.18);
+    background: color-mix(in srgb, var(--surface) 78%, transparent);
+}
+
+@media (max-width: 768px) {
+    .resume-title {
+        font-size: 2.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .resume-title {
+        font-size: 2.4rem;
     }
 }

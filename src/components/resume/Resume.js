@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './Resume.css';
+import { translations } from '../../i18n';
 
-const Resume = () => {
+const Resume = ({ language = 'en' }) => {
+  const content = translations[language].resume;
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -30,17 +32,17 @@ const Resume = () => {
       {isMobile ? (
         <div className="mobile-resume-content">
           <div className="mobile-resume-header">
-            <h1 className="resume-title">Resume</h1>
-            <p className="resume-subtitle">Sibin Blessen - Senior Software Engineer</p>
+            <h1 className="resume-title">{content.title}</h1>
+            <p className="resume-subtitle">{content.subtitle}</p>
           </div>
           
           <div className="mobile-resume-actions">
             <button 
               onClick={handleDownload}
               className="download-button"
-              aria-label="Download Resume PDF"
+              aria-label={content.downloadLabel}
             >
-              📄 Download Resume
+              📄 {content.download}
             </button>
             
             <a 
@@ -48,16 +50,15 @@ const Resume = () => {
               target="_blank" 
               rel="noopener noreferrer"
               className="view-button"
-              aria-label="Open Resume in new tab"
+              aria-label={content.openLabel}
             >
-              🔗 Open in New Tab
+              🔗 {content.open}
             </a>
           </div>
 
           <div className="mobile-pdf-notice">
             <p>
-              For the best viewing experience on mobile devices, 
-              please download the PDF or open it in a new tab.
+              {content.notice}
             </p>
           </div>
 
@@ -66,8 +67,8 @@ const Resume = () => {
               src="/docs/sibin_blessen_resume.pdf" 
               type="application/pdf" 
               className="mobile-pdf-embed"
-              title="Sibin Blessen Resume"
-              aria-label="Sibin Blessen's Resume PDF"
+              title={content.pdfTitle}
+              aria-label={content.pdfLabel}
             />
           </div>
         </div>
@@ -77,8 +78,8 @@ const Resume = () => {
             src="/docs/sibin_blessen_resume.pdf" 
             type="application/pdf" 
             className="desktop-pdf-embed"
-            title="Sibin Blessen Resume"
-            aria-label="Sibin Blessen's Resume PDF"
+            title={content.pdfTitle}
+            aria-label={content.pdfLabel}
           />
         </div>
       )}

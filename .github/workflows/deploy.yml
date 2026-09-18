@@ -1,0 +1,72 @@
+name: Build and deploy portfolio
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run tests
+        run: npm test -- --watchAll=false --runInBand
+
+      - name: Build site
+        run: npm run build
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: build
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+  smoke-test:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check deployed pages and assets
+        env:
+          SITE_URL: https://sibinblessen.github.io
+        run: |
+          set -euo pipefail
+          for path in / /docs/sibin_blessen_resume.pdf /manifest.json /favicon.svg /sitemap.xml; do
+            curl --fail --silent --show-error --location --retry 10 --retry-all-errors --head "${SITE_URL}${path}"
+          done
+          social_image=$(curl --fail --silent --show-error --location "${SITE_URL}/" | sed -n 's/.*property="og:image" content="\([^"]*\)".*/\1/p' | head -n 1)
+          test -n "${social_image}"
+          curl --fail --silent --show-error --location --retry 10 --retry-all-errors --head "${social_image}"

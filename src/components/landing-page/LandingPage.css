@@ -1,6 +1,20 @@
 .LandingPage {
     position: relative;
     margin: 0 auto;
-    background-color: #08090a;
+    background: transparent;
     padding-top: 0; /* Remove negative margin since we have fixed navbar */
+}
+
+.LandingPage > section:not(#about) {
+    position: relative;
+}
+
+.LandingPage > section:not(#about)::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: max(1.25rem, calc((100% - var(--content-width)) / 2));
+    right: max(1.25rem, calc((100% - var(--content-width)) / 2));
+    height: 1px;
+    background: var(--line);
 }

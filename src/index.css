@@ -13,14 +13,29 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
-  color: #f4f7f5;
-  background: linear-gradient(135deg, #0f1419 0%, #1a1f2e  25%, #2d3748 50%, #1a202c 75%, #08090a 100%);
+  color: var(--paper);
+  background: var(--ink);
   min-height: 100vh;
-  padding-top: 100px; /* Account for fixed navbar */
+  padding-top: 100px;
 }
 
 a {
   text-decoration: none;
+}
+
+::selection {
+  color: var(--on-accent);
+  background: var(--cyan);
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 3px;
 }
 
 /* Mobile-specific optimizations */
@@ -63,10 +78,6 @@ a {
     margin-bottom: 3rem;
   }
   
-  .section-title {
-    font-size: clamp(2rem, 8vw, 2.8rem) !important;
-  }
-  
   .section-subtitle {
     font-size: 1rem !important;
   }
@@ -76,7 +87,7 @@ a {
 @media (max-width: 768px) {
   /* Better focus indicators */
   *:focus {
-    outline: 2px solid #63d2ff;
+    outline: 2px solid var(--cyan);
     outline-offset: 2px;
   }
   

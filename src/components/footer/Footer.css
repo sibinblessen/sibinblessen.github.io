@@ -8,13 +8,13 @@
 
 .footer {
     padding-bottom: 20px;
-    color: #777777;
+    color: var(--muted);
     font-weight: 800;
     background: transparent;
 }
 
 .footer:hover {
-    color: #63d2ff;
+    color: var(--cyan);
 }
 
 /* Mobile Responsive Design */
@@ -57,5 +57,43 @@
     .footer {
         font-size: 0.8rem;
         padding-bottom: 0.5rem;
+    }
+}
+
+.footer-container {
+    position: relative;
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: 2rem var(--content-gutter) 2.5rem;
+    border-top: 1px solid var(--line);
+}
+
+.footer {
+    padding-bottom: 0;
+    color: var(--muted);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition: color 0.2s ease;
+}
+
+.footer:hover {
+    color: var(--cyan);
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        padding: 1.5rem 1.25rem 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-container {
+        padding: 1.25rem 1rem 1.75rem;
+    }
+
+    .footer {
+        font-size: 0.68rem;
     }
 }

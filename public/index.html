@@ -13,94 +13,54 @@
     
     <!-- Viewport and Mobile Optimization -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover" />
-    <meta name="theme-color" content="#63d2ff" />
+    <meta name="theme-color" content="#08090a" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <script>
+      (function () {
+        var theme = 'dark';
+        try {
+          var storedTheme = window.localStorage.getItem('portfolio-theme');
+          if (storedTheme === 'dark' || storedTheme === 'light') {
+            theme = storedTheme;
+          }
+        } catch (error) {
+        }
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script>
     
     <!-- Primary Meta Tags -->
-    <title>Sibin Blessen - Senior Software Engineer | Java Developer Portfolio</title>
-    <meta name="title" content="Sibin Blessen - Senior Software Engineer | Java Developer Portfolio" />
-    <meta name="description" content="Senior Java Developer with 6+ years of experience building scalable backend systems using Spring Boot and microservices. Expert in Azure Cloud, DevOps, and leading cross-functional teams." />
-    <meta name="keywords" content="Sibin Blessen, Senior Software Engineer, Java Developer, Spring Boot, Microservices, Azure Cloud, DevOps, Backend Development, Full Stack Developer, Software Architecture, Tata Consultancy Services, TCS, Copenhagen Denmark" />
+    <title>Sibin Blessen | Senior Software Engineer &amp; Java Developer</title>
+    <meta name="title" content="Sibin Blessen | Senior Software Engineer &amp; Java Developer" />
+    <meta name="description" content="Senior software engineer with 8+ years of experience building reliable Java backend systems with Spring Boot, microservices, Azure, and DevOps. I lead cross-functional teams and deliver maintainable solutions." />
     <meta name="author" content="Sibin Blessen" />
     <meta name="robots" content="index, follow" />
-    <meta name="language" content="English" />
-    <meta name="revisit-after" content="7 days" />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Sibin Blessen Portfolio" />
     <meta property="og:url" content="https://sibinblessen.github.io/" />
-    <meta property="og:title" content="Sibin Blessen - Senior Software Engineer | Java Developer Portfolio" />
-    <meta property="og:description" content="Senior Java Developer with 6+ years of experience building scalable backend systems using Spring Boot and microservices. Expert in Azure Cloud, DevOps, and leading cross-functional teams." />
-    <meta property="og:image" content="https://sibinblessen.github.io/static/media/sibin_blessen_profile_pic.jpg" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Sibin Blessen - Senior Software Engineer Profile Photo" />
+    <meta property="og:title" content="Sibin Blessen | Senior Software Engineer &amp; Java Developer" />
+    <meta property="og:description" content="Senior software engineer with 8+ years of experience building reliable Java backend systems with Spring Boot, microservices, Azure, and DevOps. I lead cross-functional teams and deliver maintainable solutions." />
+    <meta property="og:image" content="https://sibinblessen.github.io/static/media/sibin_blessen_profile_pic.1b4ce095374e0a2310d0.jpg" />
+    <meta property="og:image:alt" content="Sibin Blessen, Senior Software Engineer" />
     <meta property="og:locale" content="en_US" />
     
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://sibinblessen.github.io/" />
-    <meta property="twitter:title" content="Sibin Blessen - Senior Software Engineer | Java Developer Portfolio" />
-    <meta property="twitter:description" content="Senior Java Developer with 6+ years of experience building scalable backend systems using Spring Boot and microservices. Expert in Azure Cloud, DevOps, and leading cross-functional teams." />
-    <meta property="twitter:image" content="https://sibinblessen.github.io/static/media/sibin_blessen_profile_pic.jpg" />
-    <meta property="twitter:image:alt" content="Sibin Blessen - Senior Software Engineer Profile Photo" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://sibinblessen.github.io/" />
+    <meta name="twitter:title" content="Sibin Blessen | Senior Software Engineer &amp; Java Developer" />
+    <meta name="twitter:description" content="Senior software engineer with 8+ years of experience building reliable Java backend systems with Spring Boot, microservices, Azure, and DevOps. I lead cross-functional teams and deliver maintainable solutions." />
+    <meta name="twitter:image" content="https://sibinblessen.github.io/static/media/sibin_blessen_profile_pic.1b4ce095374e0a2310d0.jpg" />
+    <meta name="twitter:image:alt" content="Sibin Blessen, Senior Software Engineer" />
     
     <!-- LinkedIn -->
     <meta property="linkedin:owner" content="https://www.linkedin.com/in/sibin-blessen/" />
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://sibinblessen.github.io/" />
-    
-    <!-- Structured Data - JSON-LD -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Sibin Blessen",
-      "jobTitle": "Senior Software Engineer",
-      "description": "Senior Java Developer with 6+ years of experience building scalable backend systems using Spring Boot and microservices.",
-      "url": "https://sibinblessen.github.io/",
-      "image": "https://sibinblessen.github.io/static/media/sibin_blessen_profile_pic.jpg",
-      "sameAs": [
-        "https://www.linkedin.com/in/sibin-blessen/",
-        "https://github.com/sibinblessen/",
-        "mailto:sibinblessen@gmail.com"
-      ],
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Tata Consultancy Services",
-        "url": "https://www.tcs.com/"
-      },
-      "workLocation": {
-        "@type": "Place",
-        "name": "Copenhagen, Denmark"
-      },
-      "knowsAbout": [
-        "Java",
-        "Spring Boot",
-        "Microservices",
-        "Azure Cloud",
-        "DevOps",
-        "Kubernetes",
-        "Docker",
-        "Backend Development",
-        "Software Architecture",
-        "Team Leadership"
-      ],
-      "alumniOf": {
-        "@type": "EducationalOrganization",
-        "name": "Adi Shankara Institute of Engineering and Technology",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Kochi",
-          "addressCountry": "India"
-        }
-      }
-    }
-    </script>
     
     <!-- Preconnect to external domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>

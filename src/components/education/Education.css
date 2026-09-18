@@ -1,12 +1,12 @@
 .education-section {
-    padding: 4rem 0;
-    background: #08090a;
+    padding: 6rem 0;
+    background: transparent;
 }
 
 .education-container {
-    max-width: 1200px;
+    max-width: var(--content-width);
     margin: 0 auto;
-    padding: 0 4rem;
+    padding: 0 var(--content-gutter);
     box-sizing: border-box;
 }
 
@@ -17,18 +17,18 @@
 }
 
 .education-item {
-    background: rgba(31, 41, 55, 0.3);
-    border: 1px solid rgba(99, 210, 255, 0.1);
-    border-radius: 16px;
-    padding: 2.5rem;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    padding: 2rem;
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
 }
 
 .education-item:hover {
-    border-color: rgba(99, 210, 255, 0.3);
+    border-color: rgb(var(--cyan-rgb) / 0.3);
     transform: translateY(-5px);
-    box-shadow: 0 20px 60px rgba(99, 210, 255, 0.1);
+    box-shadow: 0 20px 60px rgb(var(--cyan-rgb) / 0.1);
 }
 
 .education-details {
@@ -39,7 +39,7 @@
 .degree-title {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #f4f7f5;
+    color: var(--paper);
     margin-bottom: 0.5rem;
     background: transparent;
 }
@@ -47,7 +47,7 @@
 .institution {
     font-size: 1.2rem;
     font-weight: 600;
-    color: #63d2ff;
+    color: var(--cyan);
     margin-bottom: 1rem;
     background: transparent;
 }
@@ -61,12 +61,12 @@
 }
 
 .location {
-    color: #9ca3af;
+    color: var(--muted);
     background: transparent;
 }
 
 .period {
-    color: #63d2ff;
+    color: var(--cyan);
     font-weight: 500;
     background: transparent;
 }
@@ -79,17 +79,17 @@
 }
 
 .highlight-item {
-    color: #d1d5db;
+    color: var(--body);
     line-height: 1.6;
     padding-left: 1rem;
-    border-left: 2px solid #63d2ff;
-    background: rgba(99, 210, 255, 0.05);
+    border-left: 2px solid var(--cyan);
+    background: rgb(var(--cyan-rgb) / 0.05);
     padding: 0.8rem 1rem;
     border-radius: 4px;
 }
 
 .highlight-item strong {
-    color: #63d2ff;
+    color: var(--cyan);
     background: transparent;
 }
 
@@ -138,7 +138,7 @@
     }
 
     .section-title {
-        font-size: clamp(2rem, 8vw, 2.8rem);
+        font-size: 2.4rem;
     }
 
     .section-subtitle {
@@ -208,6 +208,125 @@
 @media (hover: none) and (pointer: coarse) {
     .education-item:hover {
         transform: none;
-        box-shadow: 0 10px 30px rgba(99, 210, 255, 0.05);
+        box-shadow: 0 10px 30px rgb(var(--cyan-rgb) / 0.05);
+    }
+}
+
+.education-section {
+    padding: var(--section-space) 0 calc(var(--section-space) + 1rem);
+    background: linear-gradient(180deg, var(--page-wash), var(--section-wash));
+}
+
+.education-container {
+    max-width: var(--content-width);
+    padding: 0 var(--content-gutter);
+}
+
+.education-section .section-header {
+    margin-bottom: 4rem;
+}
+
+.education-section .section-subtitle {
+    max-width: 20rem;
+}
+
+.education-content {
+    gap: 1rem;
+}
+
+.education-item {
+    padding: 2rem 2.25rem;
+    border: 1px solid rgb(var(--cyan-rgb) / 0.16);
+    border-top: 2px solid var(--cyan);
+    border-radius: var(--radius);
+    background: var(--surface-gradient);
+    box-shadow: var(--card-shadow);
+}
+
+.education-item:hover {
+    border-color: rgb(var(--cyan-rgb) / 0.34);
+    border-top-color: var(--cyan);
+    transform: translateY(-3px);
+    box-shadow: 0 1.25rem 3rem rgba(0, 0, 0, 0.22), 0 0 2rem rgb(var(--cyan-rgb) / 0.08);
+}
+
+.degree-title {
+    margin-bottom: 0.75rem;
+    color: var(--paper);
+    font-size: 1.5rem;
+}
+
+.institution {
+    margin-bottom: 1.25rem;
+    color: var(--cyan);
+    font-size: 1.05rem;
+}
+
+.education-meta {
+    gap: 0;
+    margin-bottom: 0;
+    color: var(--muted);
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.education-meta .location,
+.education-meta .period {
+    padding-right: 0.8rem;
+    margin-right: 0.8rem;
+    border-right: 1px solid var(--line);
+}
+
+.education-meta .period {
+    padding-right: 0;
+    margin-right: 0;
+    border-right: 0;
+    color: var(--cyan);
+}
+
+@media (max-width: 768px) {
+    .education-section {
+        padding: var(--section-space-mobile) 0;
+    }
+
+    .education-container {
+        padding: 0 1.25rem;
+    }
+
+    .education-section .section-header {
+        margin-bottom: 3rem;
+    }
+
+    .education-item {
+        padding: 1.5rem;
+        text-align: left;
+    }
+
+    .education-meta {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0.45rem;
+    }
+
+    .education-meta .location,
+    .education-meta .period {
+        padding: 0;
+        margin: 0;
+        border: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .education-container {
+        padding: 0 1rem;
+    }
+
+    .education-item {
+        padding: 1.25rem;
+    }
+
+    .degree-title {
+        font-size: 1.25rem;
     }
 }
