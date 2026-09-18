@@ -1,7 +1,7 @@
 {
   "short_name": "Sibin Blessen",
   "name": "Sibin Blessen - Senior Software Engineer Portfolio",
-  "description": "Senior Java Developer with 6+ years of experience in scalable backend systems, Spring Boot, and microservices",
+  "description": "Senior Java Developer with 8+ years of experience in scalable backend systems, Spring Boot, and microservices",
   "icons": [
     {
       "src": "favicon.svg",
@@ -26,7 +26,7 @@
   "scope": "/",
   "display": "standalone",
   "orientation": "portrait-primary",
-  "theme_color": "#63d2ff",
+  "theme_color": "#08090a",
   "background_color": "#08090a",
   "categories": ["portfolio", "developer", "software-engineer", "java"],
   "lang": "en-US",
